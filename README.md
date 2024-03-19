@@ -1,2 +1,2 @@
 # InfluxDb_JakartaEE
-Working with Infux TimeSeries Db
+Work with InfuxDb TimeSeries DB
