@@ -14,13 +14,12 @@ public class Main {
 
         InfluxDBClient client = InfluxDBClientFactory.create("http://localhost:8086", token.toCharArray());
 
-        Person person = new Person();
-        person.setId(1L);
-        person.setName("ali");
-        person.setFamily("rad");
+        String data = "cpu,host=host1 used_percent=53.43234543";
 
         WriteApiBlocking writeApi = client.getWriteApiBlocking();
-        writeApi.writeMeasurement(bucket, org, WritePrecision.NS, person);
+        writeApi.writeRecord(bucket, org, WritePrecision.NS, data);
+
+
 
 
 //        System.out.println("Ping +: "+client.ping());
